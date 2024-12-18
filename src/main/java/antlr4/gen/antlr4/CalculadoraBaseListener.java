@@ -1,4 +1,4 @@
-// Generated from C:/Users/misae/IdeaProjects/Calculadora/src/main/java/antlr4/Calculadora.g4 by ANTLR 4.13.2
+// Generated from C:/Users/misae/IdeaProjects/Calculadora-ANTLR/src/main/java/antlr4/Calculadora.g4 by ANTLR 4.13.2
 package antlr4.gen.antlr4;
 
 import org.antlr.v4.runtime.ParserRuleContext;
@@ -29,6 +29,30 @@ public class CalculadoraBaseListener implements CalculadoraListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterTermExpression(CalculadoraParser.TermExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTermExpression(CalculadoraParser.TermExpressionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSubtract(CalculadoraParser.SubtractContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSubtract(CalculadoraParser.SubtractContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterDivide(CalculadoraParser.DivideContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -41,13 +65,13 @@ public class CalculadoraBaseListener implements CalculadoraListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterNumber(CalculadoraParser.NumberContext ctx) { }
+	@Override public void enterFactorExpression(CalculadoraParser.FactorExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitNumber(CalculadoraParser.NumberContext ctx) { }
+	@Override public void exitFactorExpression(CalculadoraParser.FactorExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -77,13 +101,13 @@ public class CalculadoraBaseListener implements CalculadoraListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterSubtract(CalculadoraParser.SubtractContext ctx) { }
+	@Override public void enterNumber(CalculadoraParser.NumberContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitSubtract(CalculadoraParser.SubtractContext ctx) { }
+	@Override public void exitNumber(CalculadoraParser.NumberContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

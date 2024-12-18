@@ -1,4 +1,4 @@
-// Generated from C:/Users/misae/IdeaProjects/Calculadora/src/main/java/antlr4/Calculadora.g4 by ANTLR 4.13.2
+// Generated from C:/Users/misae/IdeaProjects/Calculadora-ANTLR/src/main/java/antlr4/Calculadora.g4 by ANTLR 4.13.2
 package antlr4;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -18,33 +18,12 @@ public interface CalculadoraVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitAdd(CalculadoraParser.AddContext ctx);
 	/**
-	 * Visit a parse tree produced by the {@code Divide}
+	 * Visit a parse tree produced by the {@code TermExpression}
 	 * labeled alternative in {@link CalculadoraParser#expr}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitDivide(CalculadoraParser.DivideContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Number}
-	 * labeled alternative in {@link CalculadoraParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitNumber(CalculadoraParser.NumberContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Percentage}
-	 * labeled alternative in {@link CalculadoraParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitPercentage(CalculadoraParser.PercentageContext ctx);
-	/**
-	 * Visit a parse tree produced by the {@code Multiply}
-	 * labeled alternative in {@link CalculadoraParser#expr}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitMultiply(CalculadoraParser.MultiplyContext ctx);
+	T visitTermExpression(CalculadoraParser.TermExpressionContext ctx);
 	/**
 	 * Visit a parse tree produced by the {@code Subtract}
 	 * labeled alternative in {@link CalculadoraParser#expr}.
@@ -52,4 +31,39 @@ public interface CalculadoraVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitSubtract(CalculadoraParser.SubtractContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Divide}
+	 * labeled alternative in {@link CalculadoraParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitDivide(CalculadoraParser.DivideContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code FactorExpression}
+	 * labeled alternative in {@link CalculadoraParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFactorExpression(CalculadoraParser.FactorExpressionContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Percentage}
+	 * labeled alternative in {@link CalculadoraParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitPercentage(CalculadoraParser.PercentageContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Multiply}
+	 * labeled alternative in {@link CalculadoraParser#term}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitMultiply(CalculadoraParser.MultiplyContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code Number}
+	 * labeled alternative in {@link CalculadoraParser#factor}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitNumber(CalculadoraParser.NumberContext ctx);
 }

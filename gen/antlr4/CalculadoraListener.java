@@ -1,4 +1,4 @@
-// Generated from C:/Users/misae/IdeaProjects/Calculadora/src/main/java/antlr4/Calculadora.g4 by ANTLR 4.13.2
+// Generated from C:/Users/misae/IdeaProjects/Calculadora-ANTLR/src/main/java/antlr4/Calculadora.g4 by ANTLR 4.13.2
 package antlr4;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -20,53 +20,17 @@ public interface CalculadoraListener extends ParseTreeListener {
 	 */
 	void exitAdd(CalculadoraParser.AddContext ctx);
 	/**
-	 * Enter a parse tree produced by the {@code Divide}
+	 * Enter a parse tree produced by the {@code TermExpression}
 	 * labeled alternative in {@link CalculadoraParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void enterDivide(CalculadoraParser.DivideContext ctx);
+	void enterTermExpression(CalculadoraParser.TermExpressionContext ctx);
 	/**
-	 * Exit a parse tree produced by the {@code Divide}
+	 * Exit a parse tree produced by the {@code TermExpression}
 	 * labeled alternative in {@link CalculadoraParser#expr}.
 	 * @param ctx the parse tree
 	 */
-	void exitDivide(CalculadoraParser.DivideContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code Number}
-	 * labeled alternative in {@link CalculadoraParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterNumber(CalculadoraParser.NumberContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code Number}
-	 * labeled alternative in {@link CalculadoraParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitNumber(CalculadoraParser.NumberContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code Percentage}
-	 * labeled alternative in {@link CalculadoraParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterPercentage(CalculadoraParser.PercentageContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code Percentage}
-	 * labeled alternative in {@link CalculadoraParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitPercentage(CalculadoraParser.PercentageContext ctx);
-	/**
-	 * Enter a parse tree produced by the {@code Multiply}
-	 * labeled alternative in {@link CalculadoraParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void enterMultiply(CalculadoraParser.MultiplyContext ctx);
-	/**
-	 * Exit a parse tree produced by the {@code Multiply}
-	 * labeled alternative in {@link CalculadoraParser#expr}.
-	 * @param ctx the parse tree
-	 */
-	void exitMultiply(CalculadoraParser.MultiplyContext ctx);
+	void exitTermExpression(CalculadoraParser.TermExpressionContext ctx);
 	/**
 	 * Enter a parse tree produced by the {@code Subtract}
 	 * labeled alternative in {@link CalculadoraParser#expr}.
@@ -79,4 +43,64 @@ public interface CalculadoraListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitSubtract(CalculadoraParser.SubtractContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Divide}
+	 * labeled alternative in {@link CalculadoraParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterDivide(CalculadoraParser.DivideContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Divide}
+	 * labeled alternative in {@link CalculadoraParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitDivide(CalculadoraParser.DivideContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code FactorExpression}
+	 * labeled alternative in {@link CalculadoraParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterFactorExpression(CalculadoraParser.FactorExpressionContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code FactorExpression}
+	 * labeled alternative in {@link CalculadoraParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitFactorExpression(CalculadoraParser.FactorExpressionContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Percentage}
+	 * labeled alternative in {@link CalculadoraParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterPercentage(CalculadoraParser.PercentageContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Percentage}
+	 * labeled alternative in {@link CalculadoraParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitPercentage(CalculadoraParser.PercentageContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Multiply}
+	 * labeled alternative in {@link CalculadoraParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void enterMultiply(CalculadoraParser.MultiplyContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Multiply}
+	 * labeled alternative in {@link CalculadoraParser#term}.
+	 * @param ctx the parse tree
+	 */
+	void exitMultiply(CalculadoraParser.MultiplyContext ctx);
+	/**
+	 * Enter a parse tree produced by the {@code Number}
+	 * labeled alternative in {@link CalculadoraParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void enterNumber(CalculadoraParser.NumberContext ctx);
+	/**
+	 * Exit a parse tree produced by the {@code Number}
+	 * labeled alternative in {@link CalculadoraParser#factor}.
+	 * @param ctx the parse tree
+	 */
+	void exitNumber(CalculadoraParser.NumberContext ctx);
 }

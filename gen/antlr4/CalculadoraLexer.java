@@ -1,4 +1,4 @@
-// Generated from C:/Users/misae/IdeaProjects/Calculadora/src/main/java/antlr4/Calculadora.g4 by ANTLR 4.13.2
+// Generated from C:/Users/misae/IdeaProjects/Calculadora-ANTLR/src/main/java/antlr4/Calculadora.g4 by ANTLR 4.13.2
 package antlr4;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;

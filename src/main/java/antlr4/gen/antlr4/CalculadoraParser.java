@@ -1,4 +1,4 @@
-// Generated from C:/Users/misae/IdeaProjects/Calculadora/src/main/java/antlr4/Calculadora.g4 by ANTLR 4.13.2
+// Generated from C:/Users/misae/IdeaProjects/Calculadora-ANTLR/src/main/java/antlr4/Calculadora.g4 by ANTLR 4.13.2
 package antlr4.gen.antlr4;
 import antlr4.gen.antlr4.CalculadoraListener;
 import antlr4.gen.antlr4.CalculadoraVisitor;
@@ -21,10 +21,10 @@ public class CalculadoraParser extends Parser {
 	public static final int
 		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, NUMBER=6, WS=7;
 	public static final int
-		RULE_expr = 0;
+		RULE_expr = 0, RULE_term = 1, RULE_factor = 2;
 	private static String[] makeRuleNames() {
 		return new String[] {
-			"expr"
+			"expr", "term", "factor"
 		};
 	}
 	public static final String[] ruleNames = makeRuleNames();
@@ -105,11 +105,11 @@ public class CalculadoraParser extends Parser {
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class AddContext extends ExprContext {
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
 		}
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
+		public TermContext term() {
+			return getRuleContext(TermContext.class,0);
 		}
 		public AddContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
@@ -127,99 +127,32 @@ public class CalculadoraParser extends Parser {
 		}
 	}
 	@SuppressWarnings("CheckReturnValue")
-	public static class DivideContext extends ExprContext {
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
+	public static class TermExpressionContext extends ExprContext {
+		public TermContext term() {
+			return getRuleContext(TermContext.class,0);
 		}
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
-		}
-		public DivideContext(ExprContext ctx) { copyFrom(ctx); }
+		public TermExpressionContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).enterDivide(this);
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).enterTermExpression(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).exitDivide(this);
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).exitTermExpression(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CalculadoraVisitor ) return ((CalculadoraVisitor<? extends T>)visitor).visitDivide(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class NumberContext extends ExprContext {
-		public TerminalNode NUMBER() { return getToken(CalculadoraParser.NUMBER, 0); }
-		public NumberContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).enterNumber(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).exitNumber(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CalculadoraVisitor ) return ((CalculadoraVisitor<? extends T>)visitor).visitNumber(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class PercentageContext extends ExprContext {
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
-		}
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
-		}
-		public PercentageContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).enterPercentage(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).exitPercentage(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CalculadoraVisitor ) return ((CalculadoraVisitor<? extends T>)visitor).visitPercentage(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-	@SuppressWarnings("CheckReturnValue")
-	public static class MultiplyContext extends ExprContext {
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
-		}
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
-		}
-		public MultiplyContext(ExprContext ctx) { copyFrom(ctx); }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).enterMultiply(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).exitMultiply(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CalculadoraVisitor ) return ((CalculadoraVisitor<? extends T>)visitor).visitMultiply(this);
+			if ( visitor instanceof CalculadoraVisitor ) return ((CalculadoraVisitor<? extends T>)visitor).visitTermExpression(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 	@SuppressWarnings("CheckReturnValue")
 	public static class SubtractContext extends ExprContext {
-		public List<ExprContext> expr() {
-			return getRuleContexts(ExprContext.class);
+		public ExprContext expr() {
+			return getRuleContext(ExprContext.class,0);
 		}
-		public ExprContext expr(int i) {
-			return getRuleContext(ExprContext.class,i);
+		public TermContext term() {
+			return getRuleContext(TermContext.class,0);
 		}
 		public SubtractContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
@@ -253,15 +186,15 @@ public class CalculadoraParser extends Parser {
 			enterOuterAlt(_localctx, 1);
 			{
 			{
-			_localctx = new NumberContext(_localctx);
+			_localctx = new TermExpressionContext(_localctx);
 			_ctx = _localctx;
 			_prevctx = _localctx;
 
-			setState(3);
-			match(NUMBER);
+			setState(7);
+			term(0);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(22);
+			setState(17);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
 			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
@@ -269,73 +202,37 @@ public class CalculadoraParser extends Parser {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(20);
+					setState(15);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
 					case 1:
 						{
 						_localctx = new AddContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(5);
-						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
-						setState(6);
+						setState(9);
+						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
+						setState(10);
 						match(T__0);
-						setState(7);
-						expr(7);
+						setState(11);
+						term(0);
 						}
 						break;
 					case 2:
 						{
 						_localctx = new SubtractContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(8);
-						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
-						setState(9);
-						match(T__1);
-						setState(10);
-						expr(6);
-						}
-						break;
-					case 3:
-						{
-						_localctx = new MultiplyContext(new ExprContext(_parentctx, _parentState));
-						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(11);
-						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
 						setState(12);
-						match(T__2);
-						setState(13);
-						expr(5);
-						}
-						break;
-					case 4:
-						{
-						_localctx = new DivideContext(new ExprContext(_parentctx, _parentState));
-						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(14);
-						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
-						setState(15);
-						match(T__3);
-						setState(16);
-						expr(4);
-						}
-						break;
-					case 5:
-						{
-						_localctx = new PercentageContext(new ExprContext(_parentctx, _parentState));
-						pushNewRecursionContext(_localctx, _startState, RULE_expr);
-						setState(17);
 						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
-						setState(18);
-						match(T__4);
-						setState(19);
-						expr(3);
+						setState(13);
+						match(T__1);
+						setState(14);
+						term(0);
 						}
 						break;
 					}
 					} 
 				}
-				setState(24);
+				setState(19);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
 			}
@@ -352,19 +249,272 @@ public class CalculadoraParser extends Parser {
 		return _localctx;
 	}
 
+	@SuppressWarnings("CheckReturnValue")
+	public static class TermContext extends ParserRuleContext {
+		public TermContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_term; }
+	 
+		public TermContext() { }
+		public void copyFrom(TermContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class DivideContext extends TermContext {
+		public TermContext term() {
+			return getRuleContext(TermContext.class,0);
+		}
+		public FactorContext factor() {
+			return getRuleContext(FactorContext.class,0);
+		}
+		public DivideContext(TermContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).enterDivide(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).exitDivide(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalculadoraVisitor ) return ((CalculadoraVisitor<? extends T>)visitor).visitDivide(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class FactorExpressionContext extends TermContext {
+		public FactorContext factor() {
+			return getRuleContext(FactorContext.class,0);
+		}
+		public FactorExpressionContext(TermContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).enterFactorExpression(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).exitFactorExpression(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalculadoraVisitor ) return ((CalculadoraVisitor<? extends T>)visitor).visitFactorExpression(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class PercentageContext extends TermContext {
+		public TermContext term() {
+			return getRuleContext(TermContext.class,0);
+		}
+		public FactorContext factor() {
+			return getRuleContext(FactorContext.class,0);
+		}
+		public PercentageContext(TermContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).enterPercentage(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).exitPercentage(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalculadoraVisitor ) return ((CalculadoraVisitor<? extends T>)visitor).visitPercentage(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class MultiplyContext extends TermContext {
+		public TermContext term() {
+			return getRuleContext(TermContext.class,0);
+		}
+		public FactorContext factor() {
+			return getRuleContext(FactorContext.class,0);
+		}
+		public MultiplyContext(TermContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).enterMultiply(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).exitMultiply(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalculadoraVisitor ) return ((CalculadoraVisitor<? extends T>)visitor).visitMultiply(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final TermContext term() throws RecognitionException {
+		return term(0);
+	}
+
+	private TermContext term(int _p) throws RecognitionException {
+		ParserRuleContext _parentctx = _ctx;
+		int _parentState = getState();
+		TermContext _localctx = new TermContext(_ctx, _parentState);
+		TermContext _prevctx = _localctx;
+		int _startState = 2;
+		enterRecursionRule(_localctx, 2, RULE_term, _p);
+		try {
+			int _alt;
+			enterOuterAlt(_localctx, 1);
+			{
+			{
+			_localctx = new FactorExpressionContext(_localctx);
+			_ctx = _localctx;
+			_prevctx = _localctx;
+
+			setState(21);
+			factor();
+			}
+			_ctx.stop = _input.LT(-1);
+			setState(34);
+			_errHandler.sync(this);
+			_alt = getInterpreter().adaptivePredict(_input,3,_ctx);
+			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1 ) {
+					if ( _parseListeners!=null ) triggerExitRuleEvent();
+					_prevctx = _localctx;
+					{
+					setState(32);
+					_errHandler.sync(this);
+					switch ( getInterpreter().adaptivePredict(_input,2,_ctx) ) {
+					case 1:
+						{
+						_localctx = new MultiplyContext(new TermContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_term);
+						setState(23);
+						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
+						setState(24);
+						match(T__2);
+						setState(25);
+						factor();
+						}
+						break;
+					case 2:
+						{
+						_localctx = new DivideContext(new TermContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_term);
+						setState(26);
+						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
+						setState(27);
+						match(T__3);
+						setState(28);
+						factor();
+						}
+						break;
+					case 3:
+						{
+						_localctx = new PercentageContext(new TermContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_term);
+						setState(29);
+						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
+						setState(30);
+						match(T__4);
+						setState(31);
+						factor();
+						}
+						break;
+					}
+					} 
+				}
+				setState(36);
+				_errHandler.sync(this);
+				_alt = getInterpreter().adaptivePredict(_input,3,_ctx);
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			unrollRecursionContexts(_parentctx);
+		}
+		return _localctx;
+	}
+
+	@SuppressWarnings("CheckReturnValue")
+	public static class FactorContext extends ParserRuleContext {
+		public FactorContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_factor; }
+	 
+		public FactorContext() { }
+		public void copyFrom(FactorContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class NumberContext extends FactorContext {
+		public TerminalNode NUMBER() { return getToken(CalculadoraParser.NUMBER, 0); }
+		public NumberContext(FactorContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).enterNumber(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).exitNumber(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalculadoraVisitor ) return ((CalculadoraVisitor<? extends T>)visitor).visitNumber(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final FactorContext factor() throws RecognitionException {
+		FactorContext _localctx = new FactorContext(_ctx, getState());
+		enterRule(_localctx, 4, RULE_factor);
+		try {
+			_localctx = new NumberContext(_localctx);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(37);
+			match(NUMBER);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
 	public boolean sempred(RuleContext _localctx, int ruleIndex, int predIndex) {
 		switch (ruleIndex) {
 		case 0:
 			return expr_sempred((ExprContext)_localctx, predIndex);
+		case 1:
+			return term_sempred((TermContext)_localctx, predIndex);
 		}
 		return true;
 	}
 	private boolean expr_sempred(ExprContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0:
-			return precpred(_ctx, 6);
+			return precpred(_ctx, 3);
 		case 1:
-			return precpred(_ctx, 5);
+			return precpred(_ctx, 2);
+		}
+		return true;
+	}
+	private boolean term_sempred(TermContext _localctx, int predIndex) {
+		switch (predIndex) {
 		case 2:
 			return precpred(_ctx, 4);
 		case 3:
@@ -376,26 +526,33 @@ public class CalculadoraParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0007\u001a\u0002\u0000\u0007\u0000\u0001\u0000\u0001\u0000"+
-		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000"+
-		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000"+
-		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0005\u0000\u0015\b\u0000"+
-		"\n\u0000\f\u0000\u0018\t\u0000\u0001\u0000\u0000\u0001\u0000\u0001\u0000"+
-		"\u0000\u0000\u001d\u0000\u0002\u0001\u0000\u0000\u0000\u0002\u0003\u0006"+
-		"\u0000\uffff\uffff\u0000\u0003\u0004\u0005\u0006\u0000\u0000\u0004\u0016"+
-		"\u0001\u0000\u0000\u0000\u0005\u0006\n\u0006\u0000\u0000\u0006\u0007\u0005"+
-		"\u0001\u0000\u0000\u0007\u0015\u0003\u0000\u0000\u0007\b\t\n\u0005\u0000"+
-		"\u0000\t\n\u0005\u0002\u0000\u0000\n\u0015\u0003\u0000\u0000\u0006\u000b"+
-		"\f\n\u0004\u0000\u0000\f\r\u0005\u0003\u0000\u0000\r\u0015\u0003\u0000"+
-		"\u0000\u0005\u000e\u000f\n\u0003\u0000\u0000\u000f\u0010\u0005\u0004\u0000"+
-		"\u0000\u0010\u0015\u0003\u0000\u0000\u0004\u0011\u0012\n\u0002\u0000\u0000"+
-		"\u0012\u0013\u0005\u0005\u0000\u0000\u0013\u0015\u0003\u0000\u0000\u0003"+
-		"\u0014\u0005\u0001\u0000\u0000\u0000\u0014\b\u0001\u0000\u0000\u0000\u0014"+
-		"\u000b\u0001\u0000\u0000\u0000\u0014\u000e\u0001\u0000\u0000\u0000\u0014"+
-		"\u0011\u0001\u0000\u0000\u0000\u0015\u0018\u0001\u0000\u0000\u0000\u0016"+
-		"\u0014\u0001\u0000\u0000\u0000\u0016\u0017\u0001\u0000\u0000\u0000\u0017"+
-		"\u0001\u0001\u0000\u0000\u0000\u0018\u0016\u0001\u0000\u0000\u0000\u0002"+
-		"\u0014\u0016";
+		"\u0004\u0001\u0007(\u0002\u0000\u0007\u0000\u0002\u0001\u0007\u0001\u0002"+
+		"\u0002\u0007\u0002\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001"+
+		"\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0005\u0000\u0010"+
+		"\b\u0000\n\u0000\f\u0000\u0013\t\u0000\u0001\u0001\u0001\u0001\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001\u0001"+
+		"\u0001\u0001\u0001\u0001\u0001\u0001\u0005\u0001!\b\u0001\n\u0001\f\u0001"+
+		"$\t\u0001\u0001\u0002\u0001\u0002\u0001\u0002\u0000\u0002\u0000\u0002"+
+		"\u0003\u0000\u0002\u0004\u0000\u0000)\u0000\u0006\u0001\u0000\u0000\u0000"+
+		"\u0002\u0014\u0001\u0000\u0000\u0000\u0004%\u0001\u0000\u0000\u0000\u0006"+
+		"\u0007\u0006\u0000\uffff\uffff\u0000\u0007\b\u0003\u0002\u0001\u0000\b"+
+		"\u0011\u0001\u0000\u0000\u0000\t\n\n\u0003\u0000\u0000\n\u000b\u0005\u0001"+
+		"\u0000\u0000\u000b\u0010\u0003\u0002\u0001\u0000\f\r\n\u0002\u0000\u0000"+
+		"\r\u000e\u0005\u0002\u0000\u0000\u000e\u0010\u0003\u0002\u0001\u0000\u000f"+
+		"\t\u0001\u0000\u0000\u0000\u000f\f\u0001\u0000\u0000\u0000\u0010\u0013"+
+		"\u0001\u0000\u0000\u0000\u0011\u000f\u0001\u0000\u0000\u0000\u0011\u0012"+
+		"\u0001\u0000\u0000\u0000\u0012\u0001\u0001\u0000\u0000\u0000\u0013\u0011"+
+		"\u0001\u0000\u0000\u0000\u0014\u0015\u0006\u0001\uffff\uffff\u0000\u0015"+
+		"\u0016\u0003\u0004\u0002\u0000\u0016\"\u0001\u0000\u0000\u0000\u0017\u0018"+
+		"\n\u0004\u0000\u0000\u0018\u0019\u0005\u0003\u0000\u0000\u0019!\u0003"+
+		"\u0004\u0002\u0000\u001a\u001b\n\u0003\u0000\u0000\u001b\u001c\u0005\u0004"+
+		"\u0000\u0000\u001c!\u0003\u0004\u0002\u0000\u001d\u001e\n\u0002\u0000"+
+		"\u0000\u001e\u001f\u0005\u0005\u0000\u0000\u001f!\u0003\u0004\u0002\u0000"+
+		" \u0017\u0001\u0000\u0000\u0000 \u001a\u0001\u0000\u0000\u0000 \u001d"+
+		"\u0001\u0000\u0000\u0000!$\u0001\u0000\u0000\u0000\" \u0001\u0000\u0000"+
+		"\u0000\"#\u0001\u0000\u0000\u0000#\u0003\u0001\u0000\u0000\u0000$\"\u0001"+
+		"\u0000\u0000\u0000%&\u0005\u0006\u0000\u0000&\u0005\u0001\u0000\u0000"+
+		"\u0000\u0004\u000f\u0011 \"";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

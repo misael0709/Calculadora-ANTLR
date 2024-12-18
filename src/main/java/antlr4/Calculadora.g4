@@ -6,10 +6,18 @@ WS: [ \t\r\n]+ -> skip;
 
 // Reglas sintácticas
 expr
-    : expr '+' expr      # Add
-    | expr '-' expr      # Subtract
-    | expr '*' expr      # Multiply
-    | expr '/' expr      # Divide
-    | expr '%' expr      # Percentage
-    | NUMBER             # Number
+    : expr '+' term      # Add
+    | expr '-' term      # Subtract
+    | term               # TermExpression
+    ;
+
+term
+    : term '*' factor    # Multiply
+    | term '/' factor    # Divide
+    | term '%' factor    # Percentage
+    | factor             # FactorExpression
+    ;
+
+factor
+    : NUMBER             # Number
     ;

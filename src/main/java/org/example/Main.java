@@ -6,7 +6,7 @@ import antlr4.gen.antlr4.*;
 
 public class Main {
     public static void main(String[] args) {
-        String input = "50%200";
+        String input = "45%800";
 
         // Crea el lexer y el parser
         CalculadoraLexer lexer = new CalculadoraLexer(CharStreams.fromString(input));
