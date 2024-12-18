@@ -1,5 +1,5 @@
-// Generated from C:/Users/misae/IdeaProjects/Calculadora/src/main/java/antlr/Calculadora.g4 by ANTLR 4.13.2
-package antlr4.gen.antlr;
+// Generated from C:/Users/misae/IdeaProjects/Calculadora/src/main/java/antlr4/Calculadora.g4 by ANTLR 4.13.2
+package antlr4.gen.antlr4;
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -29,6 +29,18 @@ public class CalculadoraBaseListener implements CalculadoraListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterDivide(CalculadoraParser.DivideContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitDivide(CalculadoraParser.DivideContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterNumber(CalculadoraParser.NumberContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -36,6 +48,30 @@ public class CalculadoraBaseListener implements CalculadoraListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitNumber(CalculadoraParser.NumberContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterPercentage(CalculadoraParser.PercentageContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitPercentage(CalculadoraParser.PercentageContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterMultiply(CalculadoraParser.MultiplyContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitMultiply(CalculadoraParser.MultiplyContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

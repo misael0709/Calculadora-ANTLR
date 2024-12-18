@@ -2,11 +2,11 @@ package org.example;
 
 import org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
-import antlr4.gen.antlr.*;
+import antlr4.gen.antlr4.*;
 
 public class Main {
     public static void main(String[] args) {
-        String input = "3 + 5 - 2";
+        String input = "50%200";
 
         // Crea el lexer y el parser
         CalculadoraLexer lexer = new CalculadoraLexer(CharStreams.fromString(input));
@@ -15,7 +15,12 @@ public class Main {
         // Analiza la entrada
         ParseTree tree = parser.expr();
 
-        // Muestra el árbol de análisis
+        // Usa el visitor para calcular el resultado
+        Visitor visitor = new Visitor();
+        int result = visitor.visit(tree);
+
+        // Muestra el árbol de análisis y el resultado
         System.out.println("Árbol de análisis: " + tree.toStringTree(parser));
+        System.out.println("Resultado: " + result);
     }
 }

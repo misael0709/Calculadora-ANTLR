@@ -1,10 +1,15 @@
-// Generated from C:/Users/misae/IdeaProjects/Calculadora/src/main/java/antlr/Calculadora.g4 by ANTLR 4.13.2
-package antlr4.gen.antlr;
+// Generated from C:/Users/misae/IdeaProjects/Calculadora/src/main/java/antlr4/Calculadora.g4 by ANTLR 4.13.2
+package antlr4.gen.antlr4;
+import antlr4.gen.antlr4.CalculadoraListener;
+import antlr4.gen.antlr4.CalculadoraVisitor;
 import org.antlr.v4.runtime.atn.*;
 import org.antlr.v4.runtime.dfa.DFA;
 import org.antlr.v4.runtime.*;
+import org.antlr.v4.runtime.misc.*;
 import org.antlr.v4.runtime.tree.*;
 import java.util.List;
+import java.util.Iterator;
+import java.util.ArrayList;
 
 @SuppressWarnings({"all", "warnings", "unchecked", "unused", "cast", "CheckReturnValue", "this-escape"})
 public class CalculadoraParser extends Parser {
@@ -14,7 +19,7 @@ public class CalculadoraParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__0=1, T__1=2, NUMBER=3, WS=4;
+		T__0=1, T__1=2, T__2=3, T__3=4, T__4=5, NUMBER=6, WS=7;
 	public static final int
 		RULE_expr = 0;
 	private static String[] makeRuleNames() {
@@ -26,13 +31,13 @@ public class CalculadoraParser extends Parser {
 
 	private static String[] makeLiteralNames() {
 		return new String[] {
-			null, "'+'", "'-'"
+			null, "'+'", "'-'", "'*'", "'/'", "'%'"
 		};
 	}
 	private static final String[] _LITERAL_NAMES = makeLiteralNames();
 	private static String[] makeSymbolicNames() {
 		return new String[] {
-			null, null, null, "NUMBER", "WS"
+			null, null, null, null, null, null, "NUMBER", "WS"
 		};
 	}
 	private static final String[] _SYMBOLIC_NAMES = makeSymbolicNames();
@@ -109,7 +114,7 @@ public class CalculadoraParser extends Parser {
 		public AddContext(ExprContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).enterAdd(this);
+			if ( listener instanceof CalculadoraListener) ((CalculadoraListener)listener).enterAdd(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
@@ -117,7 +122,30 @@ public class CalculadoraParser extends Parser {
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof CalculadoraVisitor ) return ((CalculadoraVisitor<? extends T>)visitor).visitAdd(this);
+			if ( visitor instanceof CalculadoraVisitor) return ((CalculadoraVisitor<? extends T>)visitor).visitAdd(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class DivideContext extends ExprContext {
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public DivideContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).enterDivide(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).exitDivide(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalculadoraVisitor ) return ((CalculadoraVisitor<? extends T>)visitor).visitDivide(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -136,6 +164,52 @@ public class CalculadoraParser extends Parser {
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
 			if ( visitor instanceof CalculadoraVisitor ) return ((CalculadoraVisitor<? extends T>)visitor).visitNumber(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class PercentageContext extends ExprContext {
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public PercentageContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).enterPercentage(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).exitPercentage(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalculadoraVisitor ) return ((CalculadoraVisitor<? extends T>)visitor).visitPercentage(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	@SuppressWarnings("CheckReturnValue")
+	public static class MultiplyContext extends ExprContext {
+		public List<ExprContext> expr() {
+			return getRuleContexts(ExprContext.class);
+		}
+		public ExprContext expr(int i) {
+			return getRuleContext(ExprContext.class,i);
+		}
+		public MultiplyContext(ExprContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).enterMultiply(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof CalculadoraListener ) ((CalculadoraListener)listener).exitMultiply(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof CalculadoraVisitor ) return ((CalculadoraVisitor<? extends T>)visitor).visitMultiply(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -187,15 +261,15 @@ public class CalculadoraParser extends Parser {
 			match(NUMBER);
 			}
 			_ctx.stop = _input.LT(-1);
-			setState(13);
+			setState(22);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
-			while ( _alt!=2 && _alt!=org.antlr.v4.runtime.atn.ATN.INVALID_ALT_NUMBER ) {
+			while ( _alt!=2 && _alt!= ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					if ( _parseListeners!=null ) triggerExitRuleEvent();
 					_prevctx = _localctx;
 					{
-					setState(11);
+					setState(20);
 					_errHandler.sync(this);
 					switch ( getInterpreter().adaptivePredict(_input,0,_ctx) ) {
 					case 1:
@@ -203,11 +277,11 @@ public class CalculadoraParser extends Parser {
 						_localctx = new AddContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
 						setState(5);
-						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
+						if (!(precpred(_ctx, 6))) throw new FailedPredicateException(this, "precpred(_ctx, 6)");
 						setState(6);
 						match(T__0);
 						setState(7);
-						expr(4);
+						expr(7);
 						}
 						break;
 					case 2:
@@ -215,17 +289,53 @@ public class CalculadoraParser extends Parser {
 						_localctx = new SubtractContext(new ExprContext(_parentctx, _parentState));
 						pushNewRecursionContext(_localctx, _startState, RULE_expr);
 						setState(8);
-						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
+						if (!(precpred(_ctx, 5))) throw new FailedPredicateException(this, "precpred(_ctx, 5)");
 						setState(9);
 						match(T__1);
 						setState(10);
+						expr(6);
+						}
+						break;
+					case 3:
+						{
+						_localctx = new MultiplyContext(new ExprContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_expr);
+						setState(11);
+						if (!(precpred(_ctx, 4))) throw new FailedPredicateException(this, "precpred(_ctx, 4)");
+						setState(12);
+						match(T__2);
+						setState(13);
+						expr(5);
+						}
+						break;
+					case 4:
+						{
+						_localctx = new DivideContext(new ExprContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_expr);
+						setState(14);
+						if (!(precpred(_ctx, 3))) throw new FailedPredicateException(this, "precpred(_ctx, 3)");
+						setState(15);
+						match(T__3);
+						setState(16);
+						expr(4);
+						}
+						break;
+					case 5:
+						{
+						_localctx = new PercentageContext(new ExprContext(_parentctx, _parentState));
+						pushNewRecursionContext(_localctx, _startState, RULE_expr);
+						setState(17);
+						if (!(precpred(_ctx, 2))) throw new FailedPredicateException(this, "precpred(_ctx, 2)");
+						setState(18);
+						match(T__4);
+						setState(19);
 						expr(3);
 						}
 						break;
 					}
 					} 
 				}
-				setState(15);
+				setState(24);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,1,_ctx);
 			}
@@ -252,26 +362,40 @@ public class CalculadoraParser extends Parser {
 	private boolean expr_sempred(ExprContext _localctx, int predIndex) {
 		switch (predIndex) {
 		case 0:
-			return precpred(_ctx, 3);
+			return precpred(_ctx, 6);
 		case 1:
+			return precpred(_ctx, 5);
+		case 2:
+			return precpred(_ctx, 4);
+		case 3:
+			return precpred(_ctx, 3);
+		case 4:
 			return precpred(_ctx, 2);
 		}
 		return true;
 	}
 
 	public static final String _serializedATN =
-		"\u0004\u0001\u0004\u0011\u0002\u0000\u0007\u0000\u0001\u0000\u0001\u0000"+
+		"\u0004\u0001\u0007\u001a\u0002\u0000\u0007\u0000\u0001\u0000\u0001\u0000"+
 		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000"+
-		"\u0001\u0000\u0005\u0000\f\b\u0000\n\u0000\f\u0000\u000f\t\u0000\u0001"+
-		"\u0000\u0000\u0001\u0000\u0001\u0000\u0000\u0000\u0011\u0000\u0002\u0001"+
-		"\u0000\u0000\u0000\u0002\u0003\u0006\u0000\uffff\uffff\u0000\u0003\u0004"+
-		"\u0005\u0003\u0000\u0000\u0004\r\u0001\u0000\u0000\u0000\u0005\u0006\n"+
-		"\u0003\u0000\u0000\u0006\u0007\u0005\u0001\u0000\u0000\u0007\f\u0003\u0000"+
-		"\u0000\u0004\b\t\n\u0002\u0000\u0000\t\n\u0005\u0002\u0000\u0000\n\f\u0003"+
-		"\u0000\u0000\u0003\u000b\u0005\u0001\u0000\u0000\u0000\u000b\b\u0001\u0000"+
-		"\u0000\u0000\f\u000f\u0001\u0000\u0000\u0000\r\u000b\u0001\u0000\u0000"+
-		"\u0000\r\u000e\u0001\u0000\u0000\u0000\u000e\u0001\u0001\u0000\u0000\u0000"+
-		"\u000f\r\u0001\u0000\u0000\u0000\u0002\u000b\r";
+		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000"+
+		"\u0001\u0000\u0001\u0000\u0001\u0000\u0001\u0000\u0005\u0000\u0015\b\u0000"+
+		"\n\u0000\f\u0000\u0018\t\u0000\u0001\u0000\u0000\u0001\u0000\u0001\u0000"+
+		"\u0000\u0000\u001d\u0000\u0002\u0001\u0000\u0000\u0000\u0002\u0003\u0006"+
+		"\u0000\uffff\uffff\u0000\u0003\u0004\u0005\u0006\u0000\u0000\u0004\u0016"+
+		"\u0001\u0000\u0000\u0000\u0005\u0006\n\u0006\u0000\u0000\u0006\u0007\u0005"+
+		"\u0001\u0000\u0000\u0007\u0015\u0003\u0000\u0000\u0007\b\t\n\u0005\u0000"+
+		"\u0000\t\n\u0005\u0002\u0000\u0000\n\u0015\u0003\u0000\u0000\u0006\u000b"+
+		"\f\n\u0004\u0000\u0000\f\r\u0005\u0003\u0000\u0000\r\u0015\u0003\u0000"+
+		"\u0000\u0005\u000e\u000f\n\u0003\u0000\u0000\u000f\u0010\u0005\u0004\u0000"+
+		"\u0000\u0010\u0015\u0003\u0000\u0000\u0004\u0011\u0012\n\u0002\u0000\u0000"+
+		"\u0012\u0013\u0005\u0005\u0000\u0000\u0013\u0015\u0003\u0000\u0000\u0003"+
+		"\u0014\u0005\u0001\u0000\u0000\u0000\u0014\b\u0001\u0000\u0000\u0000\u0014"+
+		"\u000b\u0001\u0000\u0000\u0000\u0014\u000e\u0001\u0000\u0000\u0000\u0014"+
+		"\u0011\u0001\u0000\u0000\u0000\u0015\u0018\u0001\u0000\u0000\u0000\u0016"+
+		"\u0014\u0001\u0000\u0000\u0000\u0016\u0017\u0001\u0000\u0000\u0000\u0017"+
+		"\u0001\u0001\u0000\u0000\u0000\u0018\u0016\u0001\u0000\u0000\u0000\u0002"+
+		"\u0014\u0016";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
